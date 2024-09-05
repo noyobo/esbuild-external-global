@@ -2,19 +2,21 @@ import esbuild from 'esbuild';
 import {describe, expect, it} from "vitest"
 import path from 'path';
 
-import {externalGlobal} from '../src';
+import {createExternalAlias} from '../src';
 
 
 describe('external-global', () => {
   it('should bundle', async () => {
-    const result = await esbuild.build(
-      externalGlobal({
-        react: 'window.React',
-      })({
-        entryPoints: [path.resolve(__dirname, 'fixtures/react/index.tsx')],
-        bundle: true,
-        write: false,
-      }));
+
+    const alias = createExternalAlias({
+      react: 'window.React',
+    })
+    const result = await esbuild.build({
+      entryPoints: [path.resolve(__dirname, 'fixtures/react/index.tsx')],
+      bundle: true,
+      write: false,
+      alias: alias
+    });
 
     expect(result.warnings).toHaveLength(0);
     expect(result.outputFiles).toHaveLength(1);

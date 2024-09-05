@@ -2,8 +2,8 @@ import {BuildOptions} from "esbuild";
 import path from "node:path";
 import fs from 'fs-extra'
 
-export const externalGlobal = (alias: Record<string, string>): (options: BuildOptions) => BuildOptions => {
 
+export const createExternalAlias = (alias: Record<string, string>) => {
   const aliasKeys = Object.keys(alias)
 
   const aliasMap = {}
@@ -15,6 +15,12 @@ export const externalGlobal = (alias: Record<string, string>): (options: BuildOp
     aliasMap[key] = file
   })
 
+  return aliasMap as BuildOptions['alias']
+}
+
+export const externalGlobal = (alias: Record<string, string>): (options: BuildOptions) => BuildOptions => {
+  const aliasMap = createExternalAlias(alias)
+
   return (options: BuildOptions) => {
     const alias = options.alias || {}
     for (const key in aliasMap) {
@@ -24,8 +30,7 @@ export const externalGlobal = (alias: Record<string, string>): (options: BuildOp
       alias[key] = aliasMap[key]
     }
     return {
-      ...options,
-      alias
+      ...options, alias
     }
   }
 }
