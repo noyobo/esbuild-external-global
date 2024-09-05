@@ -9,6 +9,9 @@
     "build": "tsc",
     "test": "vitest"
   },
+  "engines": {
+    "node": ">=18"
+  },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^22.5.4",
