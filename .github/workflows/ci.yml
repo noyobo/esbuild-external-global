@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [ 18, 20 ]  # 使用矩阵构建来支持多个 Node.js 版本
+        node-version: [18, 20] # 使用矩阵构建来支持多个 Node.js 版本
 
     steps:
       - name: Checkout
@@ -18,7 +18,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}  # 使用矩阵中的版本
+          node-version: ${{ matrix.node-version }} # 使用矩阵中的版本
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
