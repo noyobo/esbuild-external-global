@@ -1,0 +1,30 @@
+{
+  "name": "esbuild-resolve-alias",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "repository": "git@github.com:noyobo/esbuild-resolve-alias.git",
+  "author": "noyobo <noyobo@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.5.4",
+    "@types/react": "^18.3.5",
+    "esbuild": "^0.23.1",
+    "prettier": "^3.3.3",
+    "react": "^18.3.1",
+    "standard-version": "^9.5.0",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0"
+  }
+}

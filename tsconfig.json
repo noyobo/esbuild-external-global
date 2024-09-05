@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "declaration": true,
+    "lib": ["esnext"],
+    "outDir": "lib",
+    "jsx": "react"
+  }
+}
