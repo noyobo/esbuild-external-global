@@ -1,9 +1,9 @@
 {
-  "name": "esbuild-resolve-alias",
+  "name": "esbuild-external-global",
   "version": "1.0.0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "repository": "git@github.com:noyobo/esbuild-resolve-alias.git",
+  "repository": "git@github.com:noyobo/esbuild-external-global.git",
   "author": "noyobo <noyobo@gmail.com>",
   "license": "MIT",
   "scripts": {
