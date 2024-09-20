@@ -2,9 +2,14 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "declaration": true,
-    "lib": ["esnext"],
+    "lib": [
+      "esnext"
+    ],
     "skipLibCheck": true,
     "outDir": "lib",
-    "jsx": "react"
-  }
+    "jsx": "react",
+    "baseUrl": ".",
+    "rootDir": "src"
+  },
+  "include": ["src"]
 }
