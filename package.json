@@ -4,9 +4,13 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
-    "lib"
+    "lib",
+    "CHANGELOG.md"
   ],
-  "repository": "git@github.com:noyobo/esbuild-external-global.git",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/noyobo/esbuild-external-global.git"
+  },
   "author": "noyobo <noyobo@gmail.com>",
   "license": "MIT",
   "scripts": {
