@@ -39,9 +39,16 @@ exports[`external-global > should bundle 1`] = `
   var import_react = __toESM(require_window_React());
   var App = () => {
     const [count, setCount] = import_react.default.useState(0);
-    return /* @__PURE__ */ import_react.default.createElement("div", { onClick: () => {
-      setCount((prev) => prev + 1);
-    } }, "App ", count);
+    return /* @__PURE__ */ import_react.default.createElement(
+      "div",
+      {
+        onClick: () => {
+          setCount((prev) => prev + 1);
+        }
+      },
+      "App ",
+      count
+    );
   };
 })();
 "
