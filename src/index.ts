@@ -1,24 +1,22 @@
-import { BuildOptions } from "esbuild";
+import type { BuildOptions } from "esbuild";
 import path from "node:path";
 import fs from "fs-extra";
 
 export const createExternalAlias = (alias: Record<string, string>) => {
-  const aliasKeys = Object.keys(alias);
+  const aliasMap: BuildOptions["alias"] = {};
 
-  const aliasMap = {};
-
-  aliasKeys.forEach((key) => {
-    const file = path.join(__dirname, "alias", alias[key] + ".js");
+  for (const key in alias) {
+    const file = path.join(__dirname, "alias", `${alias[key]}.js`);
     fs.ensureFileSync(file);
     fs.writeFileSync(file, `module.exports = ${alias[key]}`);
     aliasMap[key] = file;
-  });
+  }
 
-  return aliasMap as BuildOptions["alias"];
+  return aliasMap
 };
 
 export const externalGlobal = (
-  alias: Record<string, string>,
+  alias: BuildOptions["alias"],
 ): ((options: BuildOptions) => BuildOptions) => {
   const aliasMap = createExternalAlias(alias);
 

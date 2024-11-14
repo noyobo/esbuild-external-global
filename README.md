@@ -7,8 +7,7 @@
 [![Code Coverage][codecov-img]][codecov-url]
 [![Commitizen Friendly][commitizen-img]][commitizen-url]
 
-This is a plugin for [esbuild](https://esbuild.github.io/) that allows you to define global variables that are not
-bundled by esbuild.
+This is a function that defines the [esbuild](https://esbuild.github.io/) options alias for some external global variables
 
 ## Installation
 
